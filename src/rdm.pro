@@ -73,29 +73,29 @@ unix:macx { # OSX
     QT += svg
     CONFIG += c++11
 
-    debug: CONFIG-=app_bundle
+    # debug: CONFIG-=app_bundle
 
     release: DESTDIR = ./../bin/osx/release
-    debug:   DESTDIR = ./../bin/osx/debug
+    # debug:   DESTDIR = ./../bin/osx/debug
 
-    #deployment
+    # deployment
     QMAKE_INFO_PLIST =  $$PWD/resources/Info.plist
     ICON = $$PWD/resources/rdm.icns
 
     release {
-        CRASHREPORTER_APP.files = $$DESTDIR/crashreporter
-        CRASHREPORTER_APP.path = Contents/MacOS
-        QMAKE_BUNDLE_DATA += CRASHREPORTER_APP
+        # CRASHREPORTER_APP.files = $$DESTDIR/crashreporter
+        # CRASHREPORTER_APP.path = Contents/MacOS
+        # QMAKE_BUNDLE_DATA += CRASHREPORTER_APP
     }
 }
 
 unix:!macx { # ubuntu & debian
     CONFIG += static release
-    CONFIG -= debug    
+    CONFIG -= debug
 
     QTPLUGIN += qsvg qsvgicon
 
-    QMAKE_CXXFLAGS += -Wno-sign-compare    
+    QMAKE_CXXFLAGS += -Wno-sign-compare
 
     release: DESTDIR = ./../bin/linux/release
     debug:   DESTDIR = ./../bin/linux/debug

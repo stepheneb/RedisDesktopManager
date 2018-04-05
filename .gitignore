@@ -76,3 +76,5 @@ tests/unit_tests/coverage*
 *.qmlc
 *.jsc
 .qmake.stash
+
+src/resources/Info.plist
